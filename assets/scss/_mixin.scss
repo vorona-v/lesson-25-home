@@ -1,0 +1,185 @@
+  @mixin font-smoothing {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  @mixin list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  @mixin absolute-max{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  @mixin psevdo-absolute{
+    content: '';
+    position: absolute;
+  }
+  @mixin color-link($value) {
+    color: $value;
+    @include transition(all, 0.15s);
+    &:focus, &:visited {
+      color: $value;
+    }
+    &:hover {
+      text-decoration: underline;
+      color: lighten($value, 15%);
+    }
+  }
+  @mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+  }
+  @mixin background-size($background-size) {
+    -webkit-background-size: $background-size;
+    -moz-background-size: $background-size;
+    -o-background-size: $background-size;
+    background-size: $background-size;
+  }
+  @mixin box-shadow($value) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+  }
+  @mixin flexbox {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  @mixin flexbox-center {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @mixin inline-flex {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+  @mixin origin($originX, $originY){
+    -webkit-transform-origin: $originX $originY;
+    -moz-transform-origin: $originX $originY;
+    -o-transform-origin: $originX $originY;
+    -ms-transform-origin:$originX $originY;
+    transform-origin: $originX $originY;
+  }
+  @mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }
+  @mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+  }
+  @mixin scale($ratio) {
+    -webkit-transform: scale($ratio);
+    transform: scale($ratio);
+  }
+  
+  @mixin aspect-ratio($width, $height) {
+    position: relative;
+    width: 100%;
+    padding-bottom: ($height / $width) * 100%;
+    overflow: hidden;
+    > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  
+  @mixin animation($animation) {
+    -moz-animation: $animation;
+    -webkit-animation: $animation;
+    animation: $animation;
+  }
+  @mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+  }
+  
+  @mixin pointer-events($value) {
+    -webkit-user-select: $value;
+    -moz-user-select: $value;
+    -ms-user-select: $value;
+    user-select: $value;
+    pointer-events: $value;
+  }
+  @mixin user-select($arg) {
+    -webkit-user-select: $arg;
+    -moz-user-select: $arg;
+    -ms-user-select: $arg;
+    user-select: $arg;
+  }
+  
+  @mixin scrollbar {
+    &::-webkit-scrollbar {
+      @content;
+    }
+  }
+  
+  @mixin scrollbar-track {
+    &::-webkit-scrollbar-track {
+      @content;
+    }
+  }
+  
+  @mixin scrollbar-thumb {
+    &::-webkit-scrollbar-thumb {
+      @content;
+    }
+  }
+  @mixin max-large {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+  @mixin min-large {
+    @media only screen and (min-width: 1201px) {
+      @content;
+    }
+  }
+  @mixin max-medium {
+    @media only screen and (max-width: 991px) {
+      @content;
+    }
+  }
+  @mixin min-medium {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  }
+  @mixin max-small {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
+  }
+@mixin min-small {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
