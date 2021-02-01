@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 @import "mixin";
 
 * {
@@ -9,6 +10,8 @@ html {
 
 body,h1,h2 {
     margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
 
 h1 {
@@ -17,6 +20,7 @@ h1 {
     text-transform: uppercase;
     color: black;
     padding: 25px 0;
+    font-weight: 700;
 }
 
 .container {
@@ -34,7 +38,6 @@ header {
     padding-bottom: 28px;
 }
 .input-wrap {
-    position: relative;
     input {
         width: 350px;
         height: 40px;
@@ -43,6 +46,7 @@ header {
         outline: none;
         border: 1px solid #cdcdcd;
         font-size: 1rem;
+        font-weight: 400;
         &:focus {
             border: 1px solid #000000;
             @include border-radius(0);
@@ -50,17 +54,6 @@ header {
 
         &:placeholder {
             color: #eaeaea;
-        }
-    }
-    p {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        font-size: 0.8rem;
-        letter-spacing: 0.05em;
-        margin-bottom: 0;
-        span {
-            color: #ff0000;
         }
     }
 }
@@ -75,6 +68,8 @@ header {
     border: 2px solid #000000;
     margin-left: 20px;
     outline: none;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
     @include border-radius(0);
     @include transition(background-color 0.2s);
     &:focus {
@@ -104,8 +99,16 @@ header {
     color: #ffffff;
     font-size: 1.2rem;
     letter-spacing: 0.07em;
+    font-weight: 300;
     span {
         text-transform: capitalize;
+        font-weight: 700;
+        margin-right: 3px;
+    }
+
+
+    .weather-city {
+        font-weight: 700;
     }
 
     .weather-city,
@@ -123,6 +126,11 @@ header {
         margin-bottom: 10px;
     }
 
+    
+    .weather-pressure {
+        margin-top: 25px
+    }
+
     .weather-wind-info {
         @include flexbox;
     }
@@ -130,14 +138,14 @@ header {
     .weather-description-info {
         width: 30%;
         @include flexbox-center;
-        flex-direction: column;
+        flex-wrap: wrap;
         font-size: 1rem;
-        margin-bottom: 25px;
 
         img {
             max-width: 60px;
             width: 100%;
             vertical-align: bottom;
+            margin-right: 10px;
         }
     }
 }

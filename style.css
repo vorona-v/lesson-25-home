@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -8,6 +9,8 @@ html {
 
 body, h1, h2 {
   margin: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 
 h1 {
@@ -16,6 +19,7 @@ h1 {
   text-transform: uppercase;
   color: black;
   padding: 25px 0;
+  font-weight: 700;
 }
 
 .container {
@@ -40,9 +44,6 @@ header {
   padding-bottom: 28px;
 }
 
-.input-wrap {
-  position: relative;
-}
 .input-wrap input {
   width: 350px;
   height: 40px;
@@ -51,6 +52,7 @@ header {
   outline: none;
   border: 1px solid #cdcdcd;
   font-size: 1rem;
+  font-weight: 400;
 }
 .input-wrap input:focus {
   border: 1px solid #000000;
@@ -61,17 +63,6 @@ header {
 }
 .input-wrap input:placeholder {
   color: #eaeaea;
-}
-.input-wrap p {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  margin-bottom: 0;
-}
-.input-wrap p span {
-  color: #ff0000;
 }
 
 .search-btn {
@@ -91,6 +82,8 @@ header {
   border: 2px solid #000000;
   margin-left: 20px;
   outline: none;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -141,9 +134,15 @@ header {
   color: #ffffff;
   font-size: 1.2rem;
   letter-spacing: 0.07em;
+  font-weight: 300;
 }
 .weather-info span {
   text-transform: capitalize;
+  font-weight: 700;
+  margin-right: 3px;
+}
+.weather-info .weather-city {
+  font-weight: 700;
 }
 .weather-info .weather-city,
 .weather-info .weather-temp {
@@ -162,6 +161,9 @@ header {
   width: 100%;
   margin-bottom: 10px;
 }
+.weather-info .weather-pressure {
+  margin-top: 25px;
+}
 .weather-info .weather-wind-info {
   display: -webkit-box;
   display: -webkit-flex;
@@ -178,14 +180,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-wrap: wrap;
   font-size: 1rem;
-  margin-bottom: 25px;
 }
 .weather-info .weather-description-info img {
   max-width: 60px;
   width: 100%;
   vertical-align: bottom;
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
